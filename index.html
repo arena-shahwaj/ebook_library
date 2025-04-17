@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fRee-eBook</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Login Form -->
+    <div id="loginModal" class="login-modal">
+      <div class="login-content">
+        <button class="close-login" id="closeLogin">&times;</button>
+        <h2 class="login-title">fRee-eBook</h2>
+        <form class="login-form" id="loginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container" id="mainContent" style="display: none;">
+      <!-- Header -->
+      <div class="header">
+        <div class="logo">
+          <i class="fas fa-book-open"></i>
+          <span>fRee-eBook</span>
+        </div>
+      </div>
+
+      <!-- Search Section -->
+      <div class="search-section">
+        <div class="search-header">
+          <h2 class="search-title">Get Your Book</h2>
+          <div class="search-container">
+            <input type="text" placeholder="Search books..." id="searchInput" />
+            <i class="fas fa-search"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category -->
+      <div class="category-section">
+        <div class="category-tags">
+          <div class="category-tag active" data-category="all">All</div>
+          <div class="category-tag" data-category="psychology">Psychology</div>
+          <div class="category-tag" data-category="finance">Finance</div>
+          <div class="category-tag" data-category="health">Health</div>
+          <div class="category-tag" data-category="business">Business</div>
+          <div class="category-tag" data-category="fiction">Fiction</div>
+          <div class="category-tag" data-category="self-help">Self Help</div>
+          <div class="category-tag" data-category="technology">Technology</div>
+        </div>
+      </div>
+
+      <!-- Discover Section -->
+      <div class="section active" id="discoverSection">
+        <div class="books-section">
+          <div id="booksGrid" class="books-grid"></div>
+        </div>
+      </div>
+
+      <!-- Library Section -->
+      <div class="section" id="librarySection">
+        <div class="books-section">
+          <div class="section-header">
+            <h2 class="section-title">
+              <i class="fas fa-bookmark"></i>My Library
+            </h2>
+            <button class="clear-btn" id="clearLibrary">Clear</button>
+          </div>
+          <div id="libraryGrid" class="books-grid"></div>
+        </div>
+      </div>
+
+      <!-- Download Section -->
+      <div class="section" id="downloadSection">
+        <div class="books-section">
+          <div class="section-header">
+            <h2 class="section-title">
+              <i class="fas fa-download"></i>Downloads
+            </h2>
+            <button class="clear-btn" id="clearDownloads">Clear</button>
+          </div>
+          <div id="downloadGrid" class="books-grid"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav" style="display: none;">
+      <a href="#" class="nav-item active" data-section="discover">
+        <i class="fas fa-home"></i>
+        <span>Discover</span>
+      </a>
+      <a href="#" class="nav-item" data-section="library">
+        <i class="fas fa-bookmark"></i>
+        <span>Library</span>
+        <span class="nav-badge" id="libraryBadge">0</span>
+      </a>
+      <a href="#" class="nav-item" data-section="download">
+        <i class="fas fa-download"></i>
+        <span>Downloads</span>
+        <span class="nav-badge" id="downloadBadge">0</span>
+      </a>
+    </nav>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
